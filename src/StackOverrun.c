@@ -32,7 +32,7 @@ void foo(const char* input)
     printf("%p\n", buf);
     
     // char *c;
-    // long l = 0x7fffffffdc30;
+    // long l = 0x7fffffffdb44;
     // c = l;
     //
     // printf("Char contains: %s\n, at: %p\n", c, c);
@@ -42,7 +42,8 @@ void foo(const char* input)
 
 void bar(void)
 {
-    printf("Augh! I've been hacked!\n");
+    //printf("Augh! I've been hacked!\n");
+    execve("/bin/sh", NULL, NULL);
 }
 
 void temp(void)
@@ -58,7 +59,7 @@ int main(int argc, char* argv[])
     printf("Address of foo = %p\n", foo);
     printf("Address of bar = %p\n", bar);
     printf("Address of temp = %p\n", temp);
-    if (argc != 2) 
+    if (argc < 2) 
     {
         int i;
         for (i = 0; i < argc; ++i) {

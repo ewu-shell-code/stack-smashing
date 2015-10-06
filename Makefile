@@ -6,7 +6,7 @@ NOSTACKPRTCTR=-fno-stack-protector
 EXECSTACK=-z execstack
 
 stack-overrun:
-	$(CC) $(NOSTACKPRTCTR) $(EXECSTACK) $(CFLAGS) $(ODIR)/StackOverrun $(SRCDIR)/StackOverrun.c
+	$(CC) -ggdb $(NOSTACKPRTCTR) $(EXECSTACK) $(CFLAGS) $(ODIR)/StackOverrun $(SRCDIR)/StackOverrun.c
 
 shell-code:
 	$(CC) -static $(CFLAGS) $(ODIR)/Shellcode $(SRCDIR)/Shellcode.c
