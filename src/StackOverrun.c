@@ -30,9 +30,11 @@ void foo(const char* input)
     strcpy(buf, input);
     printf("%s\n", buf);
     printf("%p\n", buf);
+    printf("%s\n", (buf + 602));
+    printf("%p\n", (buf + 602));
     
     // char *c;
-    // long l = 0x7fffffffdb44;
+    // long l = 0x7fffffffe05c;
     // c = l;
     //
     // printf("Char contains: %s\n, at: %p\n", c, c);
@@ -42,8 +44,7 @@ void foo(const char* input)
 
 void bar(void)
 {
-    //printf("Augh! I've been hacked!\n");
-    execve("/bin/sh", NULL, NULL);
+    printf("Augh! I've been hacked!\n");
 }
 
 void temp(void)
