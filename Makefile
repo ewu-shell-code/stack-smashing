@@ -1,15 +1,17 @@
-CC=gcc
 SRCDIR=src
 ODIR=out
 CFLAGS=-o
 NOSTACKPRTCTR=-fno-stack-protector
 EXECSTACK=-z execstack
 
-stack-overrun:
-	$(CC) -m32 $(NOSTACKPRTCTR) $(EXECSTACK) $(CFLAGS) $(ODIR)/StackOverrun $(SRCDIR)/StackOverrun.c
+linux-stack-overrun:
+	gcc -m32 $(NOSTACKPRTCTR) $(EXECSTACK) $(CFLAGS) $(ODIR)/StackOverrun $(SRCDIR)/StackOverrun.c
+	
+win_stack-overrun:
+	bcc32 $(CFLAGS) $(ODIR)/StackOverrun $(SRCDIR)/StackOverrun.c
 
 shell-code:
-	$(CC) -static $(CFLAGS) $(ODIR)/Shellcode $(SRCDIR)/Shellcode.c
+	gcc -static $(CFLAGS) $(ODIR)/Shellcode $(SRCDIR)/Shellcode.c
 
 .PHONY: clean
 
