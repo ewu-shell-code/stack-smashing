@@ -24,7 +24,7 @@ This has been tested on Ubuntu 14.04LTS and can successfully spawn a shell.
     1. if you get an error, you will need to install `libc6-dev-i386` to compile as 32bit
 4. run `perl Linux-HackOverrun.pl` to run exploit to call different function defined in C program
     1. If it does not work right away, you may need to change the address in the script to what is printed out for the bar function (in reverse order)
-5. to open a shell with buffer overflow exploit, run `perl HackOverrun-shell.pl`
+5. to open a shell with buffer overflow exploit, run `perl Shell-HackOverrun.pl`
     1. If it does not work right away, you may need to change the address it jumps to ($shell_code_address in perl); the console output prints the address of the shellcode
 
 ## Windows Setup
